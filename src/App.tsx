@@ -7,7 +7,6 @@ function AppContent() {
   const {
     goToNext,
     goToPrev,
-    currentSlide,
     currentIndex,
     isFirst,
     isLast,
