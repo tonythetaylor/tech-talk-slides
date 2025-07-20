@@ -13,13 +13,8 @@ export default function Slide({ slide }: Props) {
   useEffect(() => {
     setPhase("initial");
 
-    const titleMoveTimer = setTimeout(() => {
-      setPhase("titleMoved");
-    }, 4000); // show title centered for 4s
-
-    const contentTimer = setTimeout(() => {
-      setPhase("content");
-    }, 5000); // fade in content at 5s
+    const titleMoveTimer = setTimeout(() => setPhase("titleMoved"), 4000);
+    const contentTimer = setTimeout(() => setPhase("content"), 5000);
 
     return () => {
       clearTimeout(titleMoveTimer);
@@ -31,26 +26,29 @@ export default function Slide({ slide }: Props) {
   const showContent = phase === "content";
 
   return (
-    <div className="h-screen w-screen bg-black/60 relative text-white px-4 overflow-hidden">
+    <div className="h-screen w-screen bg-black/60 relative text-white overflow-hidden px-4">
       {/* Title */}
       <h1
         className={`
-          absolute transition-all duration-[1200ms] ease-in-out
-          text-4xl md:text-5xl font-bold
+          absolute font-bold transition-all duration-[1200ms] ease-in-out
           ${isTitleMoved
-            ? 'top-8 left-8 text-left text-2xl md:text-3xl'
-            : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'
+            ? 'top-6 md:top-8 left-4 md:left-8 text-left text-2xl md:text-4xl'
+            : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-3xl md:text-5xl'
           }
         `}
+        style={{
+          lineHeight: '1.2',
+        }}
       >
         {slide.title}
       </h1>
 
       {/* Content */}
-      <div className="flex items-center justify-center h-full">
+      <div className="flex items-center justify-center h-full pt-28 md:pt-0 px-4">
         <pre
           className={`
-            transition-opacity duration-1000 max-w-xl text-lg whitespace-pre-wrap text-center
+            transition-opacity duration-1000 ease-in-out
+            max-w-[90vw] md:max-w-xl text-base md:text-lg whitespace-pre-wrap text-center md:text-left
             ${showContent ? 'opacity-100' : 'opacity-0'}
           `}
         >
