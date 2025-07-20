@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@import 'leaflet/dist/leaflet.css';
+
+#map {
+  touch-action: none;
+  pointer-events: none;
+}
