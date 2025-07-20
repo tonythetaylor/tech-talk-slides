@@ -1,4 +1,3 @@
-import React from "react";
 import type { SlideTypes } from "../data/slides";
 
 interface Props {
