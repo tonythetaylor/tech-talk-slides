@@ -3,12 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/tech-talk-slides/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/tech-talk-slides/manifest.json" />
+    
+    <!-- Enable full viewport and safe area for iOS -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- iOS PWA / status bar customization -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="BIT Talk" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
     <title>BIT Talk by Anthony Taylor</title>
-    <script type="module" crossorigin src="/tech-talk-slides/assets/index-BEi5kWyv.js"></script>
-    <link rel="stylesheet" crossorigin href="/tech-talk-slides/assets/index-Cguhqb4V.css">
+    <script type="module" crossorigin src="/tech-talk-slides/assets/index-Dwka0Fbp.js"></script>
+    <link rel="stylesheet" crossorigin href="/tech-talk-slides/assets/index-DTEiXcq_.css">
   </head>
-  <body>
+  <body style="background-color: black; padding-top: env(safe-area-inset-top); margin: 0;">
     <div id="root"></div>
   </body>
 </html>
