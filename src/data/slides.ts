@@ -1,9 +1,15 @@
 export interface SlideTypes {
   title: string;
   content: string;
+  isTitleSlide?: boolean;
 }
 
 export const slides: SlideTypes[] = [
+    {
+    title: "BIT Talk",
+    content: "Breaking Into Tech: Your Path, Your Power",
+    isTitleSlide: true, // 👈 add this field
+  },
   {
     title: "Breaking into Tech: My Path, Your Power",
     content: "A real-world guide to launching your tech career—whether you're college-bound or YouTube-grown."
