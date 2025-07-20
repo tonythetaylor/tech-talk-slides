@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { slides } from "./data/slides";
 import {
   SlideTransitionProvider,
@@ -5,7 +6,8 @@ import {
 } from "./context/SlideTransitionProvider";
 import SlideNav from "./components/SlideNav";
 import BackgroundMap from "./components/BackgroundMap";
-import { useEffect } from "react";
+import SwipeDebug from "./components/SwipeDebug";
+import { DEBUG_SWIPE } from "./config";
 
 function AppContent() {
   const { goToNext, goToPrev, currentIndex, isFirst, isLast } =
@@ -42,6 +44,7 @@ export default function App() {
       <BackgroundMap />
       <SlideTransitionProvider slides={slides}>
         <AppContent />
+        {DEBUG_SWIPE && <SwipeDebug />}
       </SlideTransitionProvider>
     </div>
   );

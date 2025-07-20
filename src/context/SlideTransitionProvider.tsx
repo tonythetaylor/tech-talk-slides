@@ -1,9 +1,10 @@
-// src/context/SlideTransitionProvider.tsx
-
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Slide from "../components/Slide";
 import type { SlideTypes as SlideType } from "../data/slides";
+import { useSwipe } from "../hooks/useSwipe"; // ✅ import your hook
+
+const DEBUG_TOUCH = true;
 
 // Unified context type
 interface SlideTransitionContextValue {
@@ -19,7 +20,6 @@ interface SlideTransitionContextValue {
   setSlideDirection: (dir: number) => void;
 }
 
-// ✅ Create one context
 export const SlideTransitionContext = createContext<SlideTransitionContextValue | null>(null);
 
 export function useSlideTransition() {
@@ -49,6 +49,8 @@ export function SlideTransitionProvider({
   const [slideDirection, setSlideDirection] = useState(1);
   const [direction, setDirection] = useState<"horizontal" | "vertical">(initialDirection);
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const goTo = (targetIndex: number) => {
     if (targetIndex < 0 || targetIndex >= slides.length) return;
     setSlideDirection(targetIndex > currentIndex ? 1 : -1);
@@ -76,6 +78,20 @@ export function SlideTransitionProvider({
     const timer = setTimeout(goToNext, autoplayDelay);
     return () => clearTimeout(timer);
   }, [currentIndex, autoplay, autoplayDelay]);
+
+  useSwipe(containerRef, (dir) => {
+    if (dir === "left") {
+      DEBUG_TOUCH && console.log("➡️ Swipe Left");
+      goToNext();
+    } else if (dir === "right") {
+      DEBUG_TOUCH && console.log("⬅️ Swipe Right");
+      goToPrev();
+    } else if (dir === "up") {
+      DEBUG_TOUCH && console.log("⬆️ Swipe Up");
+    } else if (dir === "down") {
+      DEBUG_TOUCH && console.log("⬇️ Swipe Down");
+    }
+  });
 
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
@@ -115,7 +131,10 @@ export function SlideTransitionProvider({
         setSlideDirection,
       }}
     >
-      <div className="relative h-full w-full overflow-hidden z-0">
+      <div
+        ref={containerRef}
+        className="relative h-full w-full overflow-hidden z-0 touch-pan-y"
+      >
         <AnimatePresence initial={false} custom={slideDirection} mode="wait">
           <motion.div
             key={currentIndex}
@@ -136,7 +155,7 @@ export function SlideTransitionProvider({
         </AnimatePresence>
 
         {/* UI Layer */}
-        <div className="absolute inset-0 z-10 pointer-events-none">
+        <div className="absolute inset-0 z-10 pointer-events-auto">
           <div className="relative w-full h-full pointer-events-auto">
             {children}
           </div>
