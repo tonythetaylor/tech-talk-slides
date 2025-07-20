@@ -1,16 +1,26 @@
 import { slides } from "./data/slides";
-import { SlideTransitionProvider, useSlideTransition } from "./context/SlideTransitionProvider";
+import {
+  SlideTransitionProvider,
+  useSlideTransition,
+} from "./context/SlideTransitionProvider";
 import SlideNav from "./components/SlideNav";
 import BackgroundMap from "./components/BackgroundMap";
+import { useEffect } from "react";
 
 function AppContent() {
-  const {
-    goToNext,
-    goToPrev,
-    currentIndex,
-    isFirst,
-    isLast,
-  } = useSlideTransition();
+  const { goToNext, goToPrev, currentIndex, isFirst, isLast } =
+    useSlideTransition();
+
+  useEffect(() => {
+    const preventScroll = (e: TouchEvent) => e.preventDefault();
+    document.body.addEventListener("touchmove", preventScroll, {
+      passive: false,
+    });
+
+    return () => {
+      document.body.removeEventListener("touchmove", preventScroll);
+    };
+  }, []);
 
   return (
     <>
