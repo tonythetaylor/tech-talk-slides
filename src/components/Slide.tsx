@@ -32,8 +32,8 @@ export default function Slide({ slide }: Props) {
         className={`
           absolute font-bold transition-all duration-[1200ms] ease-in-out
           ${isTitleMoved
-            ? 'top-6 md:top-8 left-4 md:left-8 text-left text-2xl md:text-4xl'
-            : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-3xl md:text-5xl'
+            ? 'top-6 md:top-8 left-4 md:left-8 text-left text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl'
+            : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl'
           }
         `}
         style={{
@@ -48,7 +48,8 @@ export default function Slide({ slide }: Props) {
         <pre
           className={`
             transition-opacity duration-1000 ease-in-out
-            max-w-[90vw] md:max-w-xl text-base md:text-lg whitespace-pre-wrap text-center md:text-left
+            max-w-[90vw] md:max-w-4xl whitespace-pre-wrap text-center md:text-left
+            text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl
             ${showContent ? 'opacity-100' : 'opacity-0'}
           `}
         >
