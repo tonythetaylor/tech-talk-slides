@@ -26,7 +26,7 @@ export default function SlideNav({
   }, [currentIndex]);
 
   return (
-    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-50">
       <div
         className={`text-sm text-gray-400 mb-2 transition-opacity duration-500 ${
           showCount ? "opacity-100" : "opacity-0"
