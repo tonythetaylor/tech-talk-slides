@@ -68,7 +68,7 @@ export default function SlideWrapper({
   };
 
   return (
-    <div className="h-full w-full z-10 touch-auto overflow-hidden swipe-container">
+    <div className="h-full w-full z-10 touch-auto  swipe-container">
       <motion.div
         ref={motionRef}
         key={slide.title}
@@ -85,7 +85,7 @@ export default function SlideWrapper({
           if (direction === "horizontal") handleSwipeOffset(offset.x);
           else handleSwipeOffset(offset.y);
         }}
-        className="h-full w-full overflow-hidden"
+        className="h-full w-full"
         style={{ touchAction: direction === "horizontal" ? "pan-y" : "pan-x" }}
         onAnimationComplete={onTransitionDone}
       >

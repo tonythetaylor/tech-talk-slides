@@ -133,7 +133,7 @@ export function SlideTransitionProvider({
     >
       <div
         ref={containerRef}
-        className="relative h-full w-full overflow-hidden z-0 touch-pan-y"
+        className="relative h-full w-full z-0 touch-pan-y"
       >
         <AnimatePresence initial={false} custom={slideDirection} mode="wait">
           <motion.div

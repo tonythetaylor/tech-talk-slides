@@ -40,7 +40,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <div className="relative h-screen w-screen bg-black text-white overflow-hidden">
+    <div className="relative h-screen w-screen bg-black text-white">
       <BackgroundMap />
       <SlideTransitionProvider slides={slides}>
         <AppContent />

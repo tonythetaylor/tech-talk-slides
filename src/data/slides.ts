@@ -1,6 +1,7 @@
 export interface SlideTypes {
   id?: string;
   title?: string;
+  images?: string[];
   content: string;
   isTitleSlide?: boolean;
   type?: "default" | "game" | "table";
@@ -54,37 +55,48 @@ export const slides: SlideTypes[] = [
 Quote: "I wasn’t a genius. I was curious and consistent."`,
   },
   {
-    title: "Tech Roles + Salary Game",
-    type: "game",
-    content: `Can you guess what these do and which pays the most?`,
-    roles: [
-      {
-        title: "Software Developer",
-        salary: "$110,000",
-        description: "Builds applications and systems for end users.",
-      },
-      {
-        title: "Cybersecurity Analyst",
-        salary: "$105,000",
-        description: "Protects systems from threats and vulnerabilities.",
-      },
-      {
-        title: "UI/UX Designer",
-        salary: "$95,000",
-        description: "Designs interfaces and improves user experience.",
-      },
-      {
-        title: "DevOps Engineer",
-        salary: "$120,000",
-        description: "Automates and manages CI/CD pipelines and infrastructure.",
-      },
-      {
-        title: "Data Scientist",
-        salary: "$125,000",
-        description: "Analyzes data to uncover patterns and inform decisions.",
-      },
-    ],
-  },
+  title: "Tech Roles + Salary Game",
+  type: "game",
+  content: `Can you guess what these roles do and how much they might earn in the future?`,
+  roles: [
+    {
+      title: "Software Engineer",
+      salary: "$135,000 → $250,000+",
+      description:
+        "Builds applications and systems for end users. Projected to remain one of the highest-paid roles, especially at senior/principal levels or in AI-focused companies.",
+    },
+    {
+      title: "Cybersecurity Analyst",
+      salary: "$130,000 → $210,000",
+      description:
+        "Protects systems from threats and vulnerabilities. Demand rising due to increasing attacks and compliance needs.",
+    },
+    {
+      title: "UI/UX Designer",
+      salary: "$115,000 → $180,000",
+      description:
+        "Designs interfaces and improves user experience. Salaries increasing as design becomes central to product success.",
+    },
+    {
+      title: "DevOps Engineer",
+      salary: "$150,000 → $230,000",
+      description:
+        "Automates and manages CI/CD pipelines and infrastructure. Critical in scaling modern cloud-native applications.",
+    },
+    {
+      title: "Data Scientist",
+      salary: "$155,000 → $250,000+",
+      description:
+        "Analyzes data to uncover patterns and inform decisions. AI/ML specialization pushes top-tier salaries even higher.",
+    },
+    {
+      title: "AI/ML Engineer",
+      salary: "$180,000 → $350,000+",
+      description:
+        "Designs and implements machine learning systems. Rapidly growing field with salaries rivaling top software roles.",
+    },
+  ],
+},
   {
     title: "Formal vs Self-Taught Paths",
     type: "table",
@@ -144,86 +156,94 @@ Quote: "I wasn’t a genius. I was curious and consistent."`,
       },
     ],
   },
-{
-  title: "Free Resources to Start",
-  content: "Explore free resources to kickstart your learning.",
-  resources: [
-    {
-      name: "Replit",
-      url: "https://replit.com",
-      logo: "resources//replit.png",
-    },
-    {
-      name: "FreeCodeCamp",
-      url: "https://freecodecamp.org",
-      logo: "resources//freecodecamp.png",
-    },
-    {
-      name: "W3Schools",
-      url: "https://w3schools.com",
-      logo: "resources//weschools.png",
-    },
-    {
-      name: "Harvard CS50",
-      url: "https://cs50.harvard.edu",
-      logo: "resources//harvardcs50.svg.png",
-    },
-    {
-      name: "CyberStart America",
-      url: "https://cyberstartamerica.org",
-      logo: "resources//cyberstartamerica.png",
-    },
-    {
-      name: "Khan Academy",
-      url: "https://www.khanacademy.org/computing",
-      logo: "resources//khanacademy.png",
-    },
-    {
-      name: "MIT OpenCourseWare",
-      url: "https://ocw.mit.edu",
-      logo: "resources//mit.png",
-    },
-    {
-      name: "MDN Web Docs",
-      url: "https://developer.mozilla.org",
-      logo: "resources//mdnwebdocs.png",
-    },
-    {
-      name: "The Odin Project",
-      url: "https://www.theodinproject.com",
-      logo: "resources//theodinproject.jpg",
-    },
-    {
-      name: "Frontend Mentor",
-      url: "https://www.frontendmentor.io",
-      logo: "resources//frontendmentor.png",
-    },
-    {
-      name: "Codecademy",
-      url: "https://www.codecademy.com",
-      logo: "resources//codeacademy.jpg",
-    },
-    {
-      name: "Hack The Box",
-      url: "https://www.hackthebox.com",
-      logo: "resources//hackthebox.png",
-    },
-  ],
-},
+  {
+    title: "Free Resources to Start",
+    content: "Explore free resources to kickstart your learning.",
+    resources: [
+      {
+        name: "Replit",
+        url: "https://replit.com",
+        logo: "resources//replit.png",
+      },
+      {
+        name: "FreeCodeCamp",
+        url: "https://freecodecamp.org",
+        logo: "resources//freecodecamp.png",
+      },
+      {
+        name: "W3Schools",
+        url: "https://w3schools.com",
+        logo: "resources//weschools.png",
+      },
+      {
+        name: "Harvard CS50",
+        url: "https://cs50.harvard.edu",
+        logo: "resources//harvardcs50.svg.png",
+      },
+      {
+        name: "CyberStart America",
+        url: "https://cyberstartamerica.org",
+        logo: "resources//cyberstartamerica.png",
+      },
+      {
+        name: "Khan Academy",
+        url: "https://www.khanacademy.org/computing",
+        logo: "resources//khanacademy.png",
+      },
+      {
+        name: "MIT OpenCourseWare",
+        url: "https://ocw.mit.edu",
+        logo: "resources//mit.png",
+      },
+      {
+        name: "MDN Web Docs",
+        url: "https://developer.mozilla.org",
+        logo: "resources//mdnwebdocs.png",
+      },
+      {
+        name: "The Odin Project",
+        url: "https://www.theodinproject.com",
+        logo: "resources//theodinproject.jpg",
+      },
+      {
+        name: "Frontend Mentor",
+        url: "https://www.frontendmentor.io",
+        logo: "resources//frontendmentor.png",
+      },
+      {
+        name: "Codecademy",
+        url: "https://www.codecademy.com",
+        logo: "resources//codeacademy.jpg",
+      },
+      {
+        name: "Hack The Box",
+        url: "https://www.hackthebox.com",
+        logo: "resources//hackthebox.png",
+      },
+    ],
+  },
   {
     title: "Being Black in Tech",
-    content: `- Biggest barrier? (Open question)
-- Share your experience
-- Message: "You belong in this field."`,
+    content: `Biggest barrier? (Open question)
+
+Other people’s expectations. Knowing when to grow—and when to go. Imposter syndrome. Being placed in a box.
+
+Betting on yourself. Believing in your worth even when others don’t see it yet. Trusting your vision, even when it’s not validated by the room.
+
+I had to unlearn limits that weren’t mine. Had to trust that my path might look different—but still be valid.
+
+Every challenge sharpened my clarity. Every “no” taught me how to say “yes” to myself.
+
+I belong here. And so do you.`
   },
   {
     title: "Ask Me Anything",
     content:
       "Rapid-fire questions about salary, school, failures, bias, tech stacks, and next steps.",
   },
-  {
-    title: "Scan This: Resource List + Connect",
-    content:
-      "QR Code / Link to resources page with tools, notes, and how to reach me.",
-  },
+{
+  title: "Explore My GitHub + Connect",
+  content:
+    "Here’s a link to my GitHub where you’ll find resources, tools, and ways to connect: https://github.com/tonythetaylor"
+}
 ];

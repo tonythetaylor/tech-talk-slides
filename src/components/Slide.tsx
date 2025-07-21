@@ -4,6 +4,9 @@ import GameSlide from "./GameSlide";
 import FormalVsSelfTaughtSlide from "./FormalVsSelfTaughtSlide";
 import TitleSlide from "./TitleSlide"; // ✅ Add import at top
 import FreeResourcesSlide from "./FreeResourcesSlide";
+import BeingBlackInTechSlide from "./BeingBlackInTechSlide";
+import AskMeAnythingSlide from "./AskMeAnythingSlide";
+import StayConnectedSlide from "./StayConnectedSlide";
 
 interface Props {
   slide: SlideTypes;
@@ -37,7 +40,7 @@ if (slide.isTitleSlide) {
 
 if (slide.type === "game") {
   return (
-    <div className="h-screen w-screen bg-black/60 relative text-white overflow-hidden px-4">
+    <div className="h-screen w-screen bg-black/60 relative text-white  px-4">
       <GameSlide
         slide={slide}
         isTitleMoved={isTitleMoved}
@@ -67,8 +70,39 @@ if (slide.title === "Free Resources to Start") {
   );
 }
 
+if (slide.title === "Being Black in Tech") {
   return (
-    <div className="h-screen w-screen bg-black/60 relative text-white overflow-hidden px-4">
+    <BeingBlackInTechSlide
+      isTitleMoved={isTitleMoved}
+      showContent={showContent}
+      slide={slide} 
+    />
+  );
+}
+
+if (slide.title === "Ask Me Anything") {
+  return (
+    <div className="h-screen w-screen bg-black/60 relative text-white  px-4">
+      <AskMeAnythingSlide
+        slide={slide}
+        isTitleMoved={isTitleMoved}
+        showContent={showContent}
+      />
+    </div>
+  );
+}
+
+if (slide.title?.includes("Explore My GitHub + Connect")) {
+  return (
+    <StayConnectedSlide
+      slide={slide}
+      isTitleMoved={isTitleMoved}
+      showContent={showContent}
+    />
+  );
+}
+  return (
+    <div className="h-screen w-screen bg-black/60 relative text-white  px-4">
       {/* Title */}
       <h1
         className={`
