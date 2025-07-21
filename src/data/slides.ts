@@ -22,6 +22,11 @@ export interface SlideTypes {
       cons: string;
     };
   }[];
+  resources?: {
+    name: string;
+    url: string;
+    logo: string;
+  }[];
 }
 
 export const slides: SlideTypes[] = [
@@ -139,14 +144,72 @@ Quote: "I wasn’t a genius. I was curious and consistent."`,
       },
     ],
   },
-  {
-    title: "Free Resources to Start",
-    content: `- Replit.com
-- FreeCodeCamp.org
-- W3Schools.com
-- Harvard CS50
-- CyberStart America (for cybersecurity)`,
-  },
+{
+  title: "Free Resources to Start",
+  content: "Explore free resources to kickstart your learning.",
+  resources: [
+    {
+      name: "Replit",
+      url: "https://replit.com",
+      logo: "resources//replit.png",
+    },
+    {
+      name: "FreeCodeCamp",
+      url: "https://freecodecamp.org",
+      logo: "resources//freecodecamp.png",
+    },
+    {
+      name: "W3Schools",
+      url: "https://w3schools.com",
+      logo: "resources//weschools.png",
+    },
+    {
+      name: "Harvard CS50",
+      url: "https://cs50.harvard.edu",
+      logo: "resources//harvardcs50.svg.png",
+    },
+    {
+      name: "CyberStart America",
+      url: "https://cyberstartamerica.org",
+      logo: "resources//cyberstartamerica.png",
+    },
+    {
+      name: "Khan Academy",
+      url: "https://www.khanacademy.org/computing",
+      logo: "resources//khanacademy.png",
+    },
+    {
+      name: "MIT OpenCourseWare",
+      url: "https://ocw.mit.edu",
+      logo: "resources//mit.png",
+    },
+    {
+      name: "MDN Web Docs",
+      url: "https://developer.mozilla.org",
+      logo: "resources//mdnwebdocs.png",
+    },
+    {
+      name: "The Odin Project",
+      url: "https://www.theodinproject.com",
+      logo: "resources//theodinproject.jpg",
+    },
+    {
+      name: "Frontend Mentor",
+      url: "https://www.frontendmentor.io",
+      logo: "resources//frontendmentor.png",
+    },
+    {
+      name: "Codecademy",
+      url: "https://www.codecademy.com",
+      logo: "resources//codeacademy.jpg",
+    },
+    {
+      name: "Hack The Box",
+      url: "https://www.hackthebox.com",
+      logo: "resources//hackthebox.png",
+    },
+  ],
+},
   {
     title: "Being Black in Tech",
     content: `- Biggest barrier? (Open question)

@@ -3,6 +3,7 @@ import type { SlideTypes } from "../data/slides";
 import GameSlide from "./GameSlide"; 
 import FormalVsSelfTaughtSlide from "./FormalVsSelfTaughtSlide";
 import TitleSlide from "./TitleSlide"; // ✅ Add import at top
+import FreeResourcesSlide from "./FreeResourcesSlide";
 
 interface Props {
   slide: SlideTypes;
@@ -49,6 +50,16 @@ if (slide.type === "game") {
 if (slide.title === "Formal vs Self-Taught Paths") {
   return (
     <FormalVsSelfTaughtSlide
+      slide={slide}
+      isTitleMoved={isTitleMoved}
+      showContent={showContent}
+    />
+  );
+}
+
+if (slide.title === "Free Resources to Start") {
+  return (
+    <FreeResourcesSlide
       slide={slide}
       isTitleMoved={isTitleMoved}
       showContent={showContent}
