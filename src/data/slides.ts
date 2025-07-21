@@ -3,11 +3,24 @@ export interface SlideTypes {
   title: string;
   content: string;
   isTitleSlide?: boolean;
-  type?: "default" | "game";
+  type?: "default" | "game" | "table";
   roles?: {
     title: string;
     salary: string;
     description: string;
+  }[];
+  tableData?: {
+    label: string;
+    formal: {
+      main: string;
+      pros: string;
+      cons: string;
+    };
+    self: {
+      main: string;
+      pros: string;
+      cons: string;
+    };
   }[];
 }
 
@@ -59,25 +72,73 @@ Quote: "I wasn’t a genius. I was curious and consistent."`,
       {
         title: "DevOps Engineer",
         salary: "$120,000",
-        description:
-          "Automates and manages CI/CD pipelines and infrastructure.",
+        description: "Automates and manages CI/CD pipelines and infrastructure.",
       },
       {
         title: "Data Scientist",
         salary: "$125,000",
-        description:
-          "Analyzes data to uncover patterns and inform decisions.",
+        description: "Analyzes data to uncover patterns and inform decisions.",
       },
     ],
   },
   {
     title: "Formal vs Self-Taught Paths",
-    content: `| Path | Formal Education | Self-Taught |
-|------|------------------|-------------|
-| Learn via | College, Professors | YouTube, FreeCodeCamp |
-| Cost | $$$ | Free to cheap |
-| Structure | High | Low (self-driven) |
-| Networking | Easier | Requires effort |`,
+    type: "table",
+    content: "",
+    tableData: [
+      {
+        label: "Learn via",
+        formal: {
+          main: "College, Professors",
+          pros: "Access to experts and resources",
+          cons: "Rigid curriculum",
+        },
+        self: {
+          main: "YouTube, FreeCodeCamp",
+          pros: "Self-paced and vast content",
+          cons: "Overwhelming and unstructured",
+        },
+      },
+      {
+        label: "Cost",
+        formal: {
+          main: "$$$",
+          pros: "Recognized credential",
+          cons: "High tuition and debt",
+        },
+        self: {
+          main: "Free to cheap",
+          pros: "Low barrier to entry",
+          cons: "Requires self-discipline",
+        },
+      },
+      {
+        label: "Structure",
+        formal: {
+          main: "High",
+          pros: "Clear roadmap",
+          cons: "Limited flexibility",
+        },
+        self: {
+          main: "Low (self-driven)",
+          pros: "Adaptable to your goals",
+          cons: "Can lead to gaps in knowledge",
+        },
+      },
+      {
+        label: "Networking",
+        formal: {
+          main: "Easier",
+          pros: "Built-in alumni & peers",
+          cons: "Depends on institution",
+        },
+        self: {
+          main: "Requires effort",
+          pros: "Global communities available",
+          cons: "Need to seek them out yourself",
+        },
+      },
+    ],
   },
   {
     title: "Free Resources to Start",

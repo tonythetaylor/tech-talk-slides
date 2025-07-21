@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { SlideTypes } from "../data/slides";
 import GameSlide from "./GameSlide"; 
+import FormalVsSelfTaughtSlide from "./FormalVsSelfTaughtSlide";
 
 interface Props {
   slide: SlideTypes;
@@ -35,6 +36,16 @@ if (slide.type === "game") {
         showContent={showContent}
       />
     </div>
+  );
+}
+
+if (slide.title === "Formal vs Self-Taught Paths") {
+  return (
+    <FormalVsSelfTaughtSlide
+      slide={slide}
+      isTitleMoved={isTitleMoved}
+      showContent={showContent}
+    />
   );
 }
 
