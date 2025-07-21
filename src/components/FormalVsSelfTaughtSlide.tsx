@@ -190,7 +190,7 @@ export default function FormalVsSelfTaughtSlide({
                           cons: formal.cons,
                         })
                       }
-                      className="bg-white/10 border border-white/20 rounded-xl p-4 flex flex-col items-center justify-center text-white cursor-pointer"
+                      className="bg-white/5 border border-white/20 rounded-xl p-4 flex flex-col items-center justify-center text-white cursor-pointer"
                     >
                       <FaGraduationCap className="text-3xl mb-2 text-green-400" />
                       <div className="text-sm font-bold text-center">
@@ -209,7 +209,7 @@ export default function FormalVsSelfTaughtSlide({
                           cons: self.cons,
                         })
                       }
-                      className="bg-white/10 border border-white/20 rounded-xl p-4 flex flex-col items-center justify-center text-white cursor-pointer"
+                      className="bg-white/5 border border-white/20 rounded-xl p-4 flex flex-col items-center justify-center text-white cursor-pointer"
                     >
                       <FaBrain className="text-3xl mb-2 text-yellow-400" />
                       <div className="text-sm font-bold text-center">
