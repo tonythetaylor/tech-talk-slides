@@ -1,3 +1,4 @@
+import { QRCodeCanvas } from "qrcode.react";
 import bitLogo from "/logo.png";
 
 export default function TitleSlide() {
@@ -39,6 +40,17 @@ export default function TitleSlide() {
       <p className="mt-8 text-sm md:text-lg font-medium text-center text-white/50">
         Anthony Taylor @TaylorTheory
       </p>
+
+      {/* QR Code in Bottom Right */}
+      <div className="absolute bottom-6 right-16 text-center">
+        <QRCodeCanvas
+          value="https://tonythetaylor.github.io/tech-talk-slides/"
+          size={96}
+          bgColor="#000000"
+          fgColor="#ffffff"
+        />
+        <p className="text-xs text-white/70 mt-2">Scan to view slides</p>
+      </div>
     </div>
   );
 }
