@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { SlideTypes } from "../data/slides";
+import GameSlide from "./GameSlide"; 
 
 interface Props {
   slide: SlideTypes;
@@ -24,6 +25,18 @@ export default function Slide({ slide }: Props) {
 
   const isTitleMoved = phase === "titleMoved" || phase === "content";
   const showContent = phase === "content";
+
+if (slide.type === "game") {
+  return (
+    <div className="h-screen w-screen bg-black/60 relative text-white overflow-hidden px-4">
+      <GameSlide
+        slide={slide}
+        isTitleMoved={isTitleMoved}
+        showContent={showContent}
+      />
+    </div>
+  );
+}
 
   return (
     <div className="h-screen w-screen bg-black/60 relative text-white overflow-hidden px-4">
