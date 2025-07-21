@@ -1,6 +1,6 @@
 export interface SlideTypes {
   id?: string;
-  title: string;
+  title?: string;
   content: string;
   isTitleSlide?: boolean;
   type?: "default" | "game" | "table";
@@ -26,7 +26,6 @@ export interface SlideTypes {
 
 export const slides: SlideTypes[] = [
   {
-    title: "BIT Talk",
     content: "Breaking Into Tech: Your Path, Your Power",
     isTitleSlide: true,
   },

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { SlideTypes } from "../data/slides";
 import GameSlide from "./GameSlide"; 
 import FormalVsSelfTaughtSlide from "./FormalVsSelfTaughtSlide";
+import TitleSlide from "./TitleSlide"; // ✅ Add import at top
 
 interface Props {
   slide: SlideTypes;
@@ -26,6 +27,12 @@ export default function Slide({ slide }: Props) {
 
   const isTitleMoved = phase === "titleMoved" || phase === "content";
   const showContent = phase === "content";
+
+if (slide.isTitleSlide) {
+  return (
+    <TitleSlide />
+  );
+}
 
 if (slide.type === "game") {
   return (
