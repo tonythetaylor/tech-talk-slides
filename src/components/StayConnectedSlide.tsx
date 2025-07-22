@@ -35,8 +35,7 @@ export default function ResourceSlide({
 
       {/* Main Content */}
       {showContent && (
-        <div className="flex items-center justify-center h-screen w-full">
-          <div className="w-full max-w-5xl px-4 text-center space-y-16">
+<div className="flex items-center justify-center h-screen w-full z-20 relative">          <div className="w-full max-w-5xl px-4 text-center space-y-16">
             {/* GitHub Link */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,17 +46,17 @@ export default function ResourceSlide({
               <p className="text-xl md:text-2xl text-white/70">
                 Full resource list + tools:
               </p>
-  <motion.a
-  href="https://github.com/tonythetaylor"
-  target="_blank"
-  rel="noopener noreferrer"
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.4, duration: 0.6 }}
-  className="inline-block text-2xl md:text-3xl font-bold text-amber-400 underline underline-offset-8 hover:text-white hover:scale-105 transition-transform duration-300 ease-in-out"
->
-  github.com/tonythetaylor
-</motion.a>
+              <motion.a
+                href="https://github.com/tonythetaylor"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="inline-block text-2xl md:text-3xl font-bold text-amber-400 underline underline-offset-8 hover:text-white hover:scale-105 transition-transform duration-300 ease-in-out"
+              >
+                github.com/tonythetaylor
+              </motion.a>
             </motion.div>
 
             {/* Photo Comparison */}
